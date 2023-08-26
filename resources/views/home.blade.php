@@ -1,6 +1,9 @@
 @extends('layout')
 
 @section('content')
+<meta name="description" content="Neplants">
+<meta name="keywords" content="Plants, garden, indoor plant,succulent">
+
 <section class="hero">
         <div class="container">
             <div class="row">
@@ -35,16 +38,16 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
+                                <h5>+98601113658</h5>
                                 <span>support 24/7 time</span>
                             </div>
                         </div>
                     </div>
-                    <div class="hero__item set-bg" data-setbg="img/hero/banner.jpg">
+                    <div class="hero__item set-bg" data-setbg="img/hero/plantbanner2.jpg">
                         <div class="hero__text">
-                            <span>FRUIT FRESH</span>
-                            <h2>Vegetable <br />100% Organic</h2>
-                            <p>Free Pickup and Delivery Available</p>
+                            <span>Explore the plant with us</span>
+                            <h2 style="color: aliceblue">Plant <br />Collection</h2>
+                            <br>
                             <a href="#" class="primary-btn">SHOP NOW</a>
                         </div>
                     </div>
@@ -245,6 +248,8 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="latest-product__text">
                         <h4>Latest Products</h4>
+                        @foreach($products as $product)    
+
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">
@@ -256,24 +261,7 @@
                                         <span>$30.00</span>
                                     </div>
                                 </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-2.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-3.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
+                                                  
                             </div>
                             <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">
@@ -285,26 +273,11 @@
                                         <span>$30.00</span>
                                     </div>
                                 </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-2.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-3.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
+                                  
                             </div>
+                        
                         </div>
+                        @endforeach 
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">

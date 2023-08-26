@@ -59,6 +59,9 @@ class ProductCrudController extends CrudController
 
         CRUD::column('created_at');
         CRUD::column('updated_at');
+        CRUD::column('meta_title');
+        CRUD::column('meta_description');
+        CRUD::column('meta_keywords');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -83,6 +86,12 @@ class ProductCrudController extends CrudController
             'type'=>'summernote',
             'name'=>'description'
         ]);
+        CRUD::addField([
+            'label'=>'Product Image',
+            'type'=>'upload_multiple',
+            'name'=>'images',
+            'upload'=>true,
+        ]);
         CRUD::field('quantity');
         CRUD::field('information');
         CRUD::field('is-active');
@@ -93,7 +102,9 @@ class ProductCrudController extends CrudController
             'name' => 'categories', // the method that defines the relationship in your Model
         ]);
 
-       
+        CRUD::field('meta_title');
+        CRUD::field('meta_description');
+        CRUD::field('meta_keywords');
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');

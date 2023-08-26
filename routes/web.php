@@ -20,14 +20,14 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-Route::get('/', function () {
-    dd("Welcome");//debug 
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     dd("Welcome");//debug 
+//     return view('welcome');
+// });
 Route::get('/login',[LoginController::class,'authenticate']);
 Route::get('/category',[CategoryController::class,'getAction']);
 
-Route::get('/home',[HomeController::class,'index'])->name('home');
+Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/products',[ProductController::class,'index']);
 Route::get('/product/{slugs}',[ProductController::class,'show']);
 

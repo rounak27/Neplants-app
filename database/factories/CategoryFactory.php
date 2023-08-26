@@ -20,8 +20,7 @@ class CategoryFactory extends Factory
         return [
            'name'=>$name,
            'slugs'=>str()->slug($name),
-           'description'=> fake()->text(),
-           'image'=> fake()->imageUrl(),
+           'description'=> fake()->text()
         ];
     }
 }

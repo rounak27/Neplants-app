@@ -20,8 +20,12 @@ return new class extends Migration
             $table->mediumText('description')->nullable();
             $table->integer('quantity');
             $table->mediumText('information')->nullable();
-            $table-> integer('price');     
+            $table-> integer('price');  
+            $table->json('images')->nullable();  
             $table-> boolean('is-active')->default(true);
+            $table->string('meta_title')->nullable();
+            $table->string('meta_description')->nullable();
+            $table->string('meta_keywords')->nullable();
             $table->timestamps();
         });
     }

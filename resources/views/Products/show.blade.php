@@ -42,8 +42,7 @@
                             <i class="fa fa-phone"></i>
                         </div>
                         <div class="hero__search__phone__text">
-                            <h5>+65 11.188.888</h5>
-                            <span>support 24/7 time</span>
+                            <h5>+977-9811000001</h5>
                         </div>
                     </div>
                 </div>
@@ -80,17 +79,15 @@
                 <div class="product__details__pic">
                     <div class="product__details__pic__item">
                         <img class="product__details__pic__item--large"
-                            src="img/product/details/product-details-1.jpg" alt="">
+                            src="@if($product->images !=  null && count($product->images) >0 ) {{ Storage::url($product->images[0])}} @else img/product/product-1.jpg @endif"  alt="">
                     </div>
                     <div class="product__details__pic__slider owl-carousel">
-                        <img data-imgbigurl="img/product/details/product-details-2.jpg"
-                            src="img/product/details/thumb-1.jpg" alt="">
-                        <img data-imgbigurl="img/product/details/product-details-3.jpg"
-                            src="img/product/details/thumb-2.jpg" alt="">
-                        <img data-imgbigurl="img/product/details/product-details-5.jpg"
-                            src="img/product/details/thumb-3.jpg" alt="">
-                        <img data-imgbigurl="img/product/details/product-details-4.jpg"
-                            src="img/product/details/thumb-4.jpg" alt="">
+                      @if($product->images && count($product->images)>0)
+                        @foreach($product->images as $image)
+                        <img data-imgbigurl="{{Storage::url($image)}}"
+                            src="{{Storage::url($image)}}" alt="">
+                        @endforeach
+                        @endif                        
                     </div>
                 </div>
             </div>
@@ -106,7 +103,7 @@
                         <span>(18 reviews)</span>
                     </div>
                     <div class="product__details__price">{{$product->formatted_amount()}}</div>
-                    <p>{{$product->description}}</p>
+                    <p>{!!$product->description!!}</p>
                    <form action="/cart" method='post'   >
                     @csrf
                     <div class="product__details__quantity">
@@ -155,7 +152,7 @@
                         <div class="tab-pane active" id="tabs-1" role="tabpanel">
                             <div class="product__details__tab__desc">
                                 <h6>Products Description</h6>
-                                <p>{{$product->description}}</p>
+                                <p>{!!$product->description!!}</p>
                             </div>
                         </div>
                         <div class="tab-pane" id="tabs-2" role="tabpanel">

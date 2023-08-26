@@ -40,8 +40,8 @@ class CategoryCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::column('name');
-        CRUD::column('slugs');
         CRUD::column('parent_id');
+        CRUD::column('slugs');
         CRUD::column('image');
         CRUD::column('description');
         CRUD::column('is-active');
@@ -66,19 +66,14 @@ class CategoryCrudController extends CrudController
         CRUD::setValidation(CategoryRequest::class);
 
         CRUD::field('name');
-        CRUD::field('slugs');
         CRUD::field('parent_id');
-        CRUD::addField(
-            [
-                'name' => 'image',
-                'type' => 'upload',
-                'label' => 'Image',
-                'upload' => true,
-                'crop' => true,
-                'aspect_ratio' => 1,
-                'disk' => 'public',
-                'upload_path' => 'uploads/images/category',]
-            );
+        CRUD::addField([
+            'name'=>'image',
+            'type'=>'upload',
+            'upload'=>true,
+            'label'=>'Category Image',
+        ]);
+
         CRUD::field('description');
         CRUD::field('is-active');
 

@@ -11,7 +11,8 @@
         "jackiedo/cart": "^3.0",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
-        "laravel/tinker": "^2.7"
+        "laravel/tinker": "^2.7",
+        "spatie/laravel-medialibrary": "^10.9"
     },
     "require-dev": {
         "backpack/generators": "^3.3",

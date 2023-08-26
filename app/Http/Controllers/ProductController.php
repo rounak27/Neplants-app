@@ -15,10 +15,10 @@ class ProductController extends Controller
         $categories=Category::limit(11)->get();
         $category= Category::where('slugs',$filterCategorySlugs)->first();
        if($category){
-              $products=$category->products()->get();
+              $products=$category->products()->orderBy('created_at','desc')->get();
        }
        else{
-         $products=Product::all();
+         $products=Product::orderBy('created_at','desc')->get();
        }
          return view("Products.list",[
             'categories'=>$categories,
